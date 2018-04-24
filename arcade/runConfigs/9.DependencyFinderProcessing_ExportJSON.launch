@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/arcade/src/edu/usc/softarch/arcade/antipattern/detection/interfacebased/DependencyFinderProcessing_ExportJSON.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.softarch.arcade.antipattern.detection.interfacebased.DependencyFinderProcessing_ExportJSON"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/Users/daniellink/Desktop/hadoop_results/demo&quot;&#13;&#10;&quot;/Users/daniellink/Desktop/hadoop_results/extra_info/depfinders&quot;&#13;&#10;&quot;/Users/daniellink/Desktop/hadoop_results/extra_info/clone&quot;&#13;&#10;&quot;/Users/daniellink/Desktop/hadoop_results/extra_info/logical_dependencies/hadoop_cleaned.csv&quot;&#13;&#10; &quot;org.apache.hadoop&quot;&#13;&#10;&quot;/Users/daniellink/Desktop/hadoop_results/hadoop_acdc_smells.csv&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="arcade"/>
+</launchConfiguration>

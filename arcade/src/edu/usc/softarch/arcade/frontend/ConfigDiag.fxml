@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="427.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usc.softarch.arcade.frontend.configController">
+   <children>
+      <TabPane prefHeight="360.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="External Tools">
+               <content>
+                  <AnchorPane prefHeight="256.0" prefWidth="550.0">
+                     <children>
+                        <TextField fx:id="uccLocText" layoutX="122.0" layoutY="58.0" onAction="#uccLocEntered" onKeyReleased="#uccLocEntered" onMouseClicked="#uccLocClicked" prefHeight="26.0" prefWidth="175.0" text="UCC location" />
+                        <Label layoutX="128.0" layoutY="27.0" text="Location" />
+                        <Label layoutX="15.0" layoutY="63.0" text="UCC" AnchorPane.leftAnchor="15.0" />
+                        <CheckBox fx:id="uccCheck" layoutX="98.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#uccCheckClicked" selected="true" />
+                        <TextField fx:id="dotDirText" layoutX="122.0" layoutY="98.0" onAction="#dotDirEntered" onKeyReleased="#dotDirEntered" onMouseClicked="#dotDirClicked" prefHeight="26.0" prefWidth="173.0" text="GraphViz location" />
+                        <CheckBox fx:id="dotCheck" layoutX="98.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#dotCheckClicked" selected="true" />
+                        <Label layoutX="15.0" layoutY="103.0" text="GraphViz" AnchorPane.leftAnchor="15.0" />
+                        <TextField fx:id="svgLocText" layoutX="122.0" layoutY="138.0" onAction="#svgLocEntered" onKeyReleased="#svgLocEntered" onMouseClicked="#svgLocClicked" prefHeight="26.0" prefWidth="174.0" text="SVG viewer location" />
+                        <CheckBox fx:id="svgCheck" layoutX="98.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#svgCheckClicked" selected="true" />
+                        <Label layoutX="14.0" layoutY="143.0" text="SVG viewer" AnchorPane.leftAnchor="15.0" />
+                        <Label layoutX="83.0" layoutY="27.0" text="Use?" />
+                        <Label fx:id="statusLabel" layoutX="13.0" layoutY="190.0" text="Label" textFill="RED" visible="false" />
+                        <Label layoutX="14.0" layoutY="182.0" text="SVG tooltips" AnchorPane.leftAnchor="15.0" />
+                        <CheckBox fx:id="svgTooltipsCheck" layoutX="98.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#svgTooltipCheckClicked" selected="true" />
+                        <ComboBox fx:id="layoutCBox" layoutX="357.0" layoutY="58.0" onAction="#dotProgChanged" prefWidth="150.0" promptText="Layout Program" />
+                        <ComboBox fx:id="outputCBox" layoutX="357.0" layoutY="98.0" onAction="#dotOutputFormatChanged" prefWidth="150.0" promptText="Output Format" />
+                        <Label layoutX="324.0" layoutY="143.0" text="Parameters" />
+                        <ListView fx:id="dotParmsListView" layoutX="324.0" layoutY="164.0" prefHeight="130.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="ARC">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="327.0" prefWidth="511.0">
+                     <children>
+                        <TextField fx:id="teText" layoutX="177.0" layoutY="223.0" onKeyReleased="#teTextEntered" prefHeight="26.0" prefWidth="64.0" />
+                        <Label layoutX="24.0" layoutY="228.0" text="Topics/Entities" AnchorPane.leftAnchor="24.0" />
+                        <Label layoutX="24.0" layoutY="191.0" text="Clusters/FastClusters" AnchorPane.leftAnchor="24.0" />
+                        <TextField fx:id="cfcText" layoutX="177.0" layoutY="186.0" onKeyReleased="#cfcTextEntered" prefHeight="26.0" prefWidth="63.0" />
+                        <Label layoutX="26.0" layoutY="107.0" text="Number of Topics" AnchorPane.leftAnchor="26.0" />
+                        <Label layoutX="26.0" layoutY="143.0" text="Number of Clusters" AnchorPane.leftAnchor="26.0" />
+                        <TextField fx:id="numTopicsText" layoutX="178.0" layoutY="102.0" onKeyReleased="#numTopicsTextEntered" prefHeight="26.0" prefWidth="63.0" />
+                        <TextField fx:id="numClusText" layoutX="178.0" layoutY="138.0" onKeyReleased="#numClustersTextEntered" prefHeight="26.0" prefWidth="63.0" />
+                        <CheckBox fx:id="numTopicsCheck" layoutX="149.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#numTopicsCheckClicked" selected="true" />
+                        <Separator layoutX="39.0" layoutY="175.0" prefWidth="200.0" />
+                        <Label layoutX="139.0" layoutY="71.0" text="Use?" />
+                        <CheckBox fx:id="numClusCheck" layoutX="149.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#numClusCheckClicked" selected="true" />
+                        <RadioButton fx:id="radioClustergain" layoutX="26.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#numClusRadioClicked" text="Clustergain">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="numClusters" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="radioPreselected" layoutX="142.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#numClusRadioClicked" text="Preselected" toggleGroup="$numClusters" />
+                        <Separator layoutX="41.0" layoutY="59.0" prefWidth="200.0" />
+                        <Separator layoutX="42.0" layoutY="259.0" prefWidth="200.0" />
+                        <TextField fx:id="superModelDirText" disable="true" layoutX="80.0" layoutY="287.0" onAction="#selectedDirClicked" onKeyReleased="#selectedDirClicked" onMouseClicked="#selectedDirClicked" />
+                        <CheckBox fx:id="superModelCheck" layoutX="99.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#superCheckClicked" text="Supermodel" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="MALLET">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="13.0" layoutY="156.0" text="Top Words" AnchorPane.leftAnchor="19.0" />
+                        <Label layoutX="19.0" layoutY="83.0" text="Threads" AnchorPane.leftAnchor="19.0" />
+                        <Label layoutX="15.0" layoutY="48.0" text="Random Seed" AnchorPane.leftAnchor="19.0" />
+                        <Label layoutX="18.0" layoutY="119.0" text="Beta" AnchorPane.leftAnchor="19.0" />
+                        <Label layoutX="15.0" layoutY="14.0" text="Iterations" AnchorPane.leftAnchor="19.0" />
+                        <TextField fx:id="mIterationsText" layoutX="130.0" layoutY="9.0" onKeyReleased="#mIterationsTextEntered" AnchorPane.rightAnchor="14.0">
+                           <tooltip>
+                              <Tooltip text="&gt;=300 needed to get different weights per topic" />
+                           </tooltip>
+                        </TextField>
+                        <TextField fx:id="mSeedText" layoutX="130.0" layoutY="43.0" onKeyReleased="#mRandomSeedTextEntered" AnchorPane.rightAnchor="14.0">
+                           <tooltip>
+                              <Tooltip text="Random Seed" />
+                           </tooltip>
+                        </TextField>
+                        <TextField fx:id="mThreadsText" layoutX="130.0" layoutY="78.0" onKeyReleased="#mThreadsTextEntered" AnchorPane.rightAnchor="14.0">
+                           <tooltip>
+                              <Tooltip text="&gt;2 does not seem to give any benefits" />
+                           </tooltip>
+                        </TextField>
+                        <TextField fx:id="mBetaText" layoutX="130.0" layoutY="114.0" onKeyReleased="#mBetaTextEntered" AnchorPane.rightAnchor="14.0" />
+                        <TextField fx:id="mTopwordsText" layoutX="130.0" layoutY="151.0" onKeyReleased="#mTopwordsTextEntered" AnchorPane.rightAnchor="14.0">
+                           <tooltip>
+                              <Tooltip text="Number of top words generated" />
+                           </tooltip>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="PKG">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Batch Packager Piggyback" />
+                        <Label layoutX="14.0" layoutY="51.0" text="Start Dir" AnchorPane.leftAnchor="14.0" />
+                        <Label layoutX="12.0" layoutY="89.0" text="Package Prefixes" AnchorPane.leftAnchor="12.0" />
+                        <Label layoutX="14.0" layoutY="124.0" text="Move to (opt.)" AnchorPane.leftAnchor="14.0" />
+                        <TextField layoutX="119.0" layoutY="46.0" AnchorPane.rightAnchor="25.0" />
+                        <TextField layoutX="118.0" layoutY="84.0" AnchorPane.rightAnchor="25.0" />
+                        <TextField layoutX="119.0" layoutY="119.0" AnchorPane.rightAnchor="25.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="RELAX (MALLET)">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="19.0" layoutY="22.0" text="Input Dir" />
+                        <Label layoutX="20.0" layoutY="111.0" text="Classifier File" />
+                        <TextField fx:id="relInputDirText" layoutX="130.0" layoutY="17.0" onAction="#relInputDirClicked" onKeyReleased="#relInputDirClicked" onMouseClicked="#relInputDirClicked" prefHeight="27.0" prefWidth="400.0" />
+                        <TextField fx:id="relClassifierFileNameText" layoutX="131.0" layoutY="106.0" onAction="#relClassifierNameClicked" onKeyReleased="#relClassifierNameClicked" />
+                        <Label layoutX="20.0" layoutY="157.0" text="Training Portion" />
+                        <Button fx:id="relTrainButton" layoutX="247.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#relTrainClicked" text="Train" />
+                        <ComboBox fx:id="relaxClassifierAlgorithmComboBox" layoutX="370.0" layoutY="106.0" onScrollFinished="#relaxAlgorithmChanged" prefWidth="150.0" promptText="Classifier Algorithm" />
+                        <TextField fx:id="relaxTrainingPortionText" layoutX="131.0" layoutY="152.0" onKeyReleased="#relTraPoClicked" prefHeight="27.0" prefWidth="48.0" text="90" />
+                        <Label layoutX="179.0" layoutY="157.0" text="\%" />
+                        <TextField fx:id="relRandomSeedText" layoutX="483.0" layoutY="152.0" onAction="#relRandomSeedClicked" onKeyReleased="#relRandomSeedClicked" onMouseClicked="#relRandomSeedClicked" prefHeight="27.0" prefWidth="48.0" />
+                        <Label layoutX="370.0" layoutY="157.0" text="Random Seed" />
+                        <TextField fx:id="relOutputDirText" layoutX="131.0" layoutY="63.0" onAction="#relOutputDirClicked" onKeyReleased="#relOutputDirClicked" onMouseClicked="#relOutputDirClicked" prefHeight="27.0" prefWidth="399.0" />
+                        <Label layoutX="17.0" layoutY="68.0" text="Output Dir" />
+                        <TextField fx:id="relVerbosityText" layoutX="131.0" layoutY="195.0" onAction="#relVerbosityClicked" onKeyReleased="#relVerbosityClicked" onMouseClicked="#relVerbosityClicked" prefHeight="27.0" prefWidth="25.0" />
+                        <Label layoutX="20.0" layoutY="200.0" text="Verbosity" />
+                        <Label layoutX="370.0" layoutY="200.0" text="Trials" />
+                        <TextField fx:id="relTrialsText" layoutX="483.0" layoutY="195.0" onAction="#relTrialsClicked" onKeyReleased="#relTrialsClicked" onMouseClicked="#relTrialsClicked" prefHeight="27.0" prefWidth="48.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="RELAX (Main)">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Minimum Confidence for Match" />
+                        <TextField fx:id="matchConfidenceText" layoutX="223.0" layoutY="9.0" onAction="#matchConfidenceEntered" onKeyReleased="#matchConfidenceEntered" prefHeight="27.0" prefWidth="48.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Metrics">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="metricsDirTbx" layoutX="108.0" layoutY="22.0" onMouseClicked="#metricsDirClicked" prefHeight="27.0" prefWidth="418.0" />
+                        <ComboBox fx:id="metricsParamCbx" layoutX="108.0" layoutY="67.0" onScrollFinished="#vDistChanged" prefWidth="150.0" promptText="VDist" />
+                        <Button fx:id="metricsRunButton" layoutX="108.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#metricsRunClicked" text="Run" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Here be dragons">
+               <content>
+                  <ImageView fitHeight="308.0" fitWidth="447.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="120.0">
+                     <image>
+                        <Image url="@00185124.0001.gif" />
+                     </image>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ImageView>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="167.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@00181666.0003.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="saveButton" layoutX="172.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#saveClicked" text="Save" />
+      <Button fx:id="cancelButton" layoutX="275.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#cancelClicked" text="Cancel" />
+   </children>
+</AnchorPane>
