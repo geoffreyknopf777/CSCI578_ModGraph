@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 import javafx.event.Event;
 import javafx.event.EventType;
 
-public class RunARC extends Application{
+public class ArcRecoveryManager extends Application{
 	
 	@FXML
 	// fx:id="consoleText"
@@ -52,16 +52,6 @@ public class RunARC extends Application{
 			System.out.println("UCC location set to " + relativeUCCFileName);
 		}
 
-		// final String relativeDotLayoutFileName = "tools" + File.separator +
-		// "graphviz" + File.separator + "circo" + File.separator +
-		// System.getProperty("os.name") + File.separator + "circo";
-		// if (FileUtil.checkFile(relativeDotLayoutFileName, false,
-		// false).exists()) {
-		// Config.setDotLayoutCommandLoc(relativeDotLayoutFileName);
-		// System.out.println("Dot layout location set to " +
-		// relativeDotLayoutFileName);
-		// }
-
 		final String homeDir = System.getProperty("user.home");
 		System.out.println("Home dir = " + homeDir);
 		final String perUserArcadeDirName = homeDir + File.separator + "arcade_userdir";
@@ -80,7 +70,6 @@ public class RunARC extends Application{
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("aRun.fxml"));
 		final Parent root = loader.load();
-		//final Parent root = FXMLLoader.load(getClass().getResource("aRun.fxml"));
 		primaryStage.setTitle("ARCADE Runner");
 		primaryStage.setScene(new Scene(root, 600, 800));
 		primaryStage.setMinWidth(600);
