@@ -22,6 +22,9 @@ application.
 
 <%= new String("Hello!") %>
 
+<% out.write(request.getParameter("repo")); %>
+<br> 
+
 <%
   try{
 	  Runtime runtime = Runtime.getRuntime();
@@ -45,6 +48,10 @@ application.
 %>
 
 <%= new String("Bye!") %>
+
+<ul>
+<li>To a <a href="ModGraph.jsp">JSP page</a>.
+</ul>
 
 </body>
 </html>

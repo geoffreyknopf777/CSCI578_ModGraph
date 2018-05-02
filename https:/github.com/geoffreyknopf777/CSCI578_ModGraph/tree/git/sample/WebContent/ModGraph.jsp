@@ -1,7 +1,7 @@
 <html>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="java.io.InputStreamReader"%>
-<%@page import="ModGraph.RunARC" %>
+<%@page import="ModGraph.GitCommitParser" %>
 
 <head>
 <title>Test Mod Application JSP Page</title>
@@ -24,8 +24,8 @@ application.
 <%= new String("Hi again!") %>
 
 <%
-  RunARC arc = new RunARC();
-  arc.launch(null); 
+  GitCommitParser arc = new GitCommitParser();
+  arc.main(null); 
 
 %>
 

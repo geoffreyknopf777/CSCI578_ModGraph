@@ -3,6 +3,267 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes/" source-path="/ImportedClasses"/>
+        <dependent-module archiveName="jung-visualization-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-visualization-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="stax-api-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/stax-api-1.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="wstx-asl-3.2.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/wstx-asl-3.2.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-api-2.8-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-api-2.8-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mallet-x.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/mallet-x.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="vecmath-1.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/vecmath-1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dom4j-1.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/dom4j-1.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-math3-3.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-math3-3.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmlbeans-2.6.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/xmlbeans-2.6.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="json-simple-1.1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/json-simple-1.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mallet_207_det.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/mallet_207_det.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Jama-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/Jama-1.0.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-math3-3.6.1-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-math3-3.6.1-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="acdc_edited.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/acdc_edited.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sootclasses-2.5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/sootclasses-2.5.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-schemas-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-ooxml-schemas-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-3d-demos-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-3d-demos-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="j3d-core-1.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/j3d-core-1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.equinox.common_3.6.200.v20130402-1505.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-cli-1.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-cli-1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-api-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-api-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javaparser-core-2.5.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/javaparser-core-2.5.2-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="guava-21.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/guava-21.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="json-20141113.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/json-20141113.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bcel-6.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/bcel-6.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-lang3-3.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-lang3-3.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xstream-1.4.9.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/xstream-1.4.9.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bcel-6.0-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/bcel-6.0-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-io-2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-io-2.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-io-2.5-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-io-2.5-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-api-2.8-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-api-2.8-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.core.jobs_3.5.300.v20130429-1813.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.core.jobs_3.5.300.v20130429-1813.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gexf4j-core-0.2.0-ALPHA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/gexf4j-core-0.2.0-ALPHA.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xpp3_min-1.1.4c.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/xpp3_min-1.1.4c.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-jai-samples-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-jai-samples-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-core-2.8-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-core-2.8-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="weka.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/weka.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-io-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-io-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="disruptor-3.3.4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/disruptor-3.3.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-core-2.7.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jackson-core-2.7.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-3d-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-3d-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jxl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jxl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-jai-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-jai-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="concurrent-1.3.4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/concurrent-1.3.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-lang3-3.5-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-lang3-3.5-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="snowball.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/snowball.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.osgi_3.9.1.v20130814-1242.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.osgi_3.9.1.v20130814-1242.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.core.runtime_3.9.0.v20130326-1255.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-api-2.8.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-api-2.8.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="algs4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/algs4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-core-2.8-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-core-2.8-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-excelant-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-excelant-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-core-2.8.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/log4j-core-2.8.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jira-client-0.5-SNAPSHOT-jar-with-dependencies.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jira-client-0.5-SNAPSHOT-jar-with-dependencies.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="polyglotclasses-1.3.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/polyglotclasses-1.3.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="guava-21.0-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/guava-21.0-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="classycle.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/classycle.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmlpull-1.1.3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/xmlpull-1.1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bcel-6.0-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/bcel-6.0-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="svnkit-1.8.15.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/svnkit-1.8.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.core.resources_3.8.101.v20130717-0806.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.core.resources_3.8.101.v20130717-0806.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mallet-y.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/mallet-y.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-lang3-3.5-sources.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-lang3-3.5-sources.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-scratchpad-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-scratchpad-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jgrapht-jdk1.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jgrapht-jdk1.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="guava-21.0-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/guava-21.0-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="junit-4.12.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/junit-4.12.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-examples-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-examples-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gson-2.6.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/gson-2.6.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.core.contenttype_3.4.200.v20130326-1255.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.core.contenttype_3.4.200.v20130326-1255.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-samples-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-samples-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-math3-3.6.1-javadoc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/commons-math3-3.6.1-javadoc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mallet-2.0.8.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/mallet-2.0.8.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="acdc.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/acdc.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="simmetrics-core-4.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/simmetrics-core-4.1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.jdt.core_3.9.1.v20130905-0837.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.jdt.core_3.9.1.v20130905-0837.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="colt-1.2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/colt-1.2.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-3.13-20150929.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/poi-ooxml-3.13-20150929.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-algorithms-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-algorithms-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="trove-2.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/trove-2.0.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jung-graph-impl-2.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jung-graph-impl-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mallet-12_22_16.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/mallet-12_22_16.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasminclasses-2.5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jasminclasses-2.5.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jcommander-1.36-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/jcommander-1.36-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.equinox.preferences_3.5.100.v20130422-1538.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/org.eclipse.equinox.preferences_3.5.100.v20130422-1538.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="collections-generic-4.01.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ModGraph/lib/collections-generic-4.01.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="sample"/>
         <property name="java-output-path" value="/sample/build/classes"/>
     </wb-module>
