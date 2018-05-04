@@ -24,6 +24,8 @@ import javafx.event.EventType;
 
 public class ArcRecoveryManager extends Application{
 	
+	private static String sLang;
+	
 	@FXML
 	// fx:id="consoleText"
 	private static TextArea consoleText; // Value injected by FXMLLoader
@@ -46,7 +48,7 @@ public class ArcRecoveryManager extends Application{
 		}
 		System.out.println("### System Properties End ###\n");
 
-		final String relativeUCCFileName = "/home/cs578user/workspace/arcade/tools" + File.separator + "ucc" + File.separator + System.getProperty("os.name") + File.separator + "UCC";
+		final String relativeUCCFileName = "tools" + File.separator + "ucc" + File.separator + System.getProperty("os.name") + File.separator + "UCC";
 		if (FileUtil.checkFile(relativeUCCFileName, false, false).exists()) {
 			Config.setUccLoc(relativeUCCFileName);
 			System.out.println("UCC location set to " + relativeUCCFileName);
@@ -91,8 +93,12 @@ public class ArcRecoveryManager extends Application{
 		//Create generic event to send to controller
 		Event e = new Event(EventType.ROOT);
 		
-		//Set the language to java
-		controller.radioJavaClicked(e);
+		//Set the language
+		if(sLang.equals("java")){
+			controller.radioJavaClicked(e);}
+		else { //"c"
+			controller.radioCClicked(e);
+		}
 		
 		//Set the recovery method to ARC
 		controller.methodListview.getSelectionModel().clearSelection(0);
@@ -106,6 +112,12 @@ public class ArcRecoveryManager extends Application{
 	}	
 	
 	public static void main(final String[] args) {
+		if(args.length < 2) {
+			sLang = "java";
+		}
+		else {
+			sLang = args[1]; //c or java
+		}
 		launch(args);
 	}
 

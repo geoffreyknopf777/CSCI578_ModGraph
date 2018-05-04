@@ -13,6 +13,10 @@ import org.apache.commons.io.FileUtils;
 
 public class GitCommitParser {
 	private static ArrayList<Commit> aCommits = new ArrayList<Commit>();
+	public static int commit_index_100_percent = 0;
+	public static int commit_index_75_percent = 0;
+	public static int commit_index_50_percent = 0;
+	public static int commit_index_25_percent = 0;
 	
 	public static ArrayList<Commit>getCommits() {
 		return aCommits;
@@ -204,35 +208,43 @@ public class GitCommitParser {
 		file.delete();
 	}
 	
-	public static void main(String [] args) {
+	//first argument = sURL, second argument = sLang
+	public static void main(String [] args) {		
 		Runtime r = Runtime.getRuntime();
-		String sURL = "https://www.github.com/apache/hadoop";
-		String sProject = "hadoop";
-		String sLang = "java";
+		String sURL = args[0];
 		String sCommand = "";
-		String sStats = "";
+		String sStats;
 		String sGitDir = "repo_clone";
 		Process p;
 		String line;
 		BufferedReader b;
 		String sRecProjectsFolder = "/home/cs578user/Desktop/RecProjects";
+		String sArchRecOutFolder = "/home/cs578user/Desktop/ArchRecOut";
 		
 		//Create directory to clone repo to
 		File rc = new File(sGitDir);
-		rc.delete();
+		delete(rc);
 		rc.mkdirs();
 		
 		try {
 			
 			//Clone the repo
+			System.out.println("cloning repo");
 			sCommand = "git clone " + sURL;
-			r.exec(sCommand, null, rc);
+			p = r.exec(sCommand, null, rc);
+			try {
+				p.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			//Get repo directory
 			File[] flist = rc.listFiles();
 			File rp = new File(flist[0].toString());
 			
 			//Get the commit stats
+			System.out.println("parsing commit stats");
 			sCommand = "git log --stat";
 			p = r.exec(sCommand, null, rp);
 			b = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -250,6 +262,7 @@ public class GitCommitParser {
 			b.close();
 			
 		//Calculate the four commit epoch times
+		System.out.println("calculating epoch times");
 		Commit first_commit = aCommits.get(0);
 		Commit last_commit = aCommits.get(aCommits.size()-1);
 		long epoch_100_percent = first_commit.getEpoch();
@@ -262,10 +275,10 @@ public class GitCommitParser {
 		//Find the four closest actual commits.
 		//Algorithm is off by at most one commit
 		//which is insignificant in a densely populated commit history.
-		int commit_index_100_percent = 0;
-		int commit_index_75_percent = 0;
-		int commit_index_50_percent = 0;
-		int commit_index_25_percent = 0;
+		commit_index_100_percent = 0;
+		commit_index_75_percent = 0;
+		commit_index_50_percent = 0;
+		commit_index_25_percent = 0;
 		for(int i=0; i<aCommits.size(); i++) {
 			Commit c = aCommits.get(i);
 			long epoch = c.getEpoch();
@@ -282,12 +295,14 @@ public class GitCommitParser {
 		}
 		
 		//Get the corresponding four commit hashes
+		System.out.println("getting commit hashes");
 		String hash_100_percent = aCommits.get(commit_index_100_percent).getHash();
 		String hash_75_percent = aCommits.get(commit_index_75_percent).getHash();
 		String hash_50_percent = aCommits.get(commit_index_50_percent).getHash();
 		String hash_25_percent = aCommits.get(commit_index_25_percent).getHash();
 		
 		//Make 4 copies of the project to "RecProjects"
+		System.out.println("cloning projects at various commit hashes");
 			//Clear out whatever is already in "RecProjects"
 			File f = new File(sRecProjectsFolder);
 			File[] lf = f.listFiles();
@@ -296,30 +311,56 @@ public class GitCommitParser {
 			}
 
 			//100 percent
-			f = new File(sRecProjectsFolder+"/100_percent");
+			f = new File(sRecProjectsFolder+"/REPOd");
 			f.mkdir();
 			FileUtils.copyDirectory(rp, f);
 			
 			//75 percent
-			f = new File(sRecProjectsFolder+"/75_percent");
+			f = new File(sRecProjectsFolder+"/REPOc");
 			f.mkdir();
 			FileUtils.copyDirectory(rp, f);
 			sCommand = "git reset --hard " + hash_75_percent;
-			r.exec(sCommand, null, f);
+			p = r.exec(sCommand, null, f);
+			try {
+				p.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			//50 percent
-			f = new File(sRecProjectsFolder+"/50_percent");
+			f = new File(sRecProjectsFolder+"/REPOb");
 			f.mkdir();
 			FileUtils.copyDirectory(rp, f);
 			sCommand = "git reset --hard " + hash_50_percent;
-			r.exec(sCommand, null, f);
+			p = r.exec(sCommand, null, f);
+			try {
+				p.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			//25 percent
-			f = new File(sRecProjectsFolder+"/25_percent");
+			f = new File(sRecProjectsFolder+"/REPOa");
 			f.mkdir();
 			FileUtils.copyDirectory(rp, f);
 			sCommand = "git reset --hard " + hash_25_percent;
-			r.exec(sCommand, null, f);
+			p = r.exec(sCommand, null, f);
+			try {
+				p.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+			
+		//Delete any existing recoveries in "ArchRecOut"
+		File fa = new File(sArchRecOutFolder);
+		File[] lfa = fa.listFiles();
+		for(int i=0; i<lfa.length; i++) {
+			delete(lfa[i]);
+		}
 		
 		} catch (IOException e) {
 			e.printStackTrace();
