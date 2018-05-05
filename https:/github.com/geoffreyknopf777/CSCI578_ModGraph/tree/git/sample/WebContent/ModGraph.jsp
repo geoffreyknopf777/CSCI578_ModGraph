@@ -1,7 +1,7 @@
 <html>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="java.io.InputStreamReader"%>
-<%@page import="ModGraph.GitCommitParser" %>
+<%@page import="ModGraph.FormSubmissionHandler" %>
 
 <head>
 <title>Test Mod Application JSP Page</title>
@@ -24,8 +24,8 @@ application.
 <%= new String("Hi again!") %>
 
 <%
-  GitCommitParser arc = new GitCommitParser();
-  arc.main(null); 
+  String[] args = {request.getParameter("repo"),request.getParameter("lang") };
+  FormSubmissionHandler.main(args); 
 
 %>
 

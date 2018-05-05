@@ -21,10 +21,11 @@ This is the output of a JSP page that is part of getting user input.
 
 <%= new String("Hello!") %>
 <%= new String ("Try https://github.com/apache/hadoop") %>
-      <form action = "hello.jsp" method = "GET">
+      <form action = "ModGraph.jsp" method = "GET">
          REPO: <input type = "text" name = "repo">
-<%--          <br />
-         other : <input type = "text" name = "value" /> --%> 
+          <br />
+         Language : <input type = "text" name = "lang" /> 
+         <br />  
          <input type = "submit" value = "Submit" />
       </form>
 
