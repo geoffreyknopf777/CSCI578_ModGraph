@@ -50,7 +50,7 @@ public class ModifiabilityCalculator {
 	private static void logscale(ArrayList<Double> aModifiabilities) {
 		for(int i=0; i<aModifiabilities.size(); i++) {
 			Double mod = aModifiabilities.get(i);
-			Double power = 10.0;
+			Double power = 6.0;
 			mod = Math.pow(mod, 1/power)*100/Math.pow(100, 1/power);
 			aModifiabilities.set(i, mod);
 		}

@@ -8,7 +8,7 @@ public class FormSubmissionHandler {
 		//Setup default arguments
 		if(args.length < 2) {
 			args = new String[2];
-			args[0] = "https://www.github.com/apache/hadoop";
+			args[0] = "https://github.com/apache/hadoop";
 			args[1] = "java";
 		}
 		
@@ -23,7 +23,7 @@ public class FormSubmissionHandler {
 		ModifiabilityCalculator.main(args);
 		
 		//Invoke the ArcRecoveryManager
-		ArcRecoveryManager.main(args);
+		//ArcRecoveryManager.main(args);
 	}
 	
 }
