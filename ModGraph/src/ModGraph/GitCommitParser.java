@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -223,7 +225,9 @@ public class GitCommitParser {
 		
 		//Create directory to clone repo to
 		File rc = new File(sGitDir);
-		delete(rc);
+		if(rc.listFiles() != null) {
+			delete(rc);
+		}
 		rc.mkdirs();
 		
 		try {
@@ -261,6 +265,10 @@ public class GitCommitParser {
 	
 			b.close();
 			
+		//Sort commits in descending order of epochs
+		System.out.println("sorting commits in descending order of epochs");
+		Collections.sort(aCommits, new CommitComparator());
+			
 		//Calculate the four commit epoch times
 		System.out.println("calculating epoch times");
 		Commit first_commit = aCommits.get(0);
@@ -295,13 +303,16 @@ public class GitCommitParser {
 		}
 		
 		//Get the corresponding four commit hashes
+		/*
 		System.out.println("getting commit hashes");
 		String hash_100_percent = aCommits.get(commit_index_100_percent).getHash();
 		String hash_75_percent = aCommits.get(commit_index_75_percent).getHash();
 		String hash_50_percent = aCommits.get(commit_index_50_percent).getHash();
 		String hash_25_percent = aCommits.get(commit_index_25_percent).getHash();
+		*/
 		
 		//Make 4 copies of the project to "RecProjects"
+		/*
 		System.out.println("cloning projects at various commit hashes");
 			//Clear out whatever is already in "RecProjects"
 			File f = new File(sRecProjectsFolder);
@@ -361,9 +372,30 @@ public class GitCommitParser {
 		for(int i=0; i<lfa.length; i++) {
 			delete(lfa[i]);
 		}
+		*/
 		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+}
+
+class CommitComparator implements Comparator<Commit>{
+
+	@Override
+	public int compare(Commit a, Commit b) {
+		long ae = a.getEpoch();
+		long be = b.getEpoch();
+		
+		if(ae > be) {
+			return 1;
+		}
+		else if(ae < be) {
+			return -1;
+		}
+		else {
+			return 0;
+		}
+	}
+	
 }
