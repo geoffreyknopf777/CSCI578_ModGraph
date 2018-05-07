@@ -18,11 +18,9 @@
     </style>
 
     <script type="text/javascript">
-    function loadJSON(url) {
-      if (window.XMLHttpRequest){
+    function loadJSON() {
        xmlhttp=new XMLHttpRequest();
-       }  
-        xmlhttp.open("GET",url,false); 
+        xmlhttp.open("GET","./modifiability.json",false); 
         xmlhttp.send();
         jsonObj= JSON.parse(xmlhttp.responseText);
         return jsonObj;  
@@ -30,14 +28,9 @@
     }
     
     function viewJSON(){
-        var txt=document.getElementById("URL").value;
-            if(txt==""){
-                alert("Enter a JSON file in the textbox");
-            }
-            else if(txt.match("modifiability.json"))
-                {  
+
                     var jsonobj;
-                    jsonObj = loadJSON(txt);
+                    jsonObj = loadJSON();
                     var epocharr=jsonObj.epochs;
                     console.log(epocharr);
                     for(var i in epocharr ){
@@ -144,6 +137,7 @@
         }
     },
     yAxis: {
+        max: 100,
         title: {
             text: 'Modifiability',           
         },
@@ -170,17 +164,16 @@
     //     }
         );
     } 
-    } 
   
 </script> 
 </head>
    
-    <body>
-       <h3> <b> Enter URL for JSON File</b></h3>
+    <body onload="viewJSON()">
+       <!--<h3> <b> Enter URL for JSON File</b></h3>
             <form name="myForm" method="POST" target="_blank">
             <input type="text" id="URL" name="URL"  value=""><br><br>
             <input type="button" name="submit" value="Submit Query" onClick="viewJSON()">
-            </form>       
+            </form>       -->
         <p id="container"></p><noscript></noscript>
     </body>
 </html>
