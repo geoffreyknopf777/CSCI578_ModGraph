@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+
+    <style>
+        body{margin-top: 100px;
+            text-align: center;
+        }
+        #submit{font-weight: bold;
+            background-color: #c0c0c0;
+            border-radius: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+    </style>
+
+    <script type="text/javascript">
+    function loadJSON(url) {
+      if (window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest();
+       }  
+        xmlhttp.open("GET",url,false); 
+        xmlhttp.send();
+        jsonObj= JSON.parse(xmlhttp.responseText);
+        return jsonObj;  
+       
+    }
+    
+    function viewJSON(){
+        var txt=document.getElementById("URL").value;
+            if(txt==""){
+                alert("Enter a JSON file in the textbox");
+            }
+            else if(txt.match("modifiability.json"))
+                {  
+                    var jsonobj;
+                    jsonObj = loadJSON(txt);
+                    var epocharr=jsonObj.epochs;
+                    console.log(epocharr);
+                    for(var i in epocharr ){
+	                    epocharr[i]=parseInt(epocharr[i]);
+	                }
+                    var epc25=parseInt(jsonObj.epoch_25);
+                    var epc50=parseInt(jsonObj.epoch_50);
+                    var epc75=parseInt(jsonObj.epoch_75);
+                    var epc100=parseInt(jsonObj.epoch_100);
+                    for(var i in epocharr){
+                        if(epocharr[i]==epc25) 
+                         x1=i;
+                        else if(epocharr[i]==epc50) 
+                         x2=i;
+                        else if(epocharr[i]==epc75) 
+                         x3=i;
+                         else if(epocharr[i]==epc100) 
+                         x4=i;
+                        
+                    } 
+
+                    var modifiabilityarr=jsonObj.modifiability;
+                    for(var i in modifiabilityarr ){
+                        modifiabilityarr[i]=parseInt( modifiabilityarr[i]);
+	                }
+                    y1=modifiabilityarr[x1];
+                    y2=modifiabilityarr[x2];
+                    y3=modifiabilityarr[x3];
+                    y4=modifiabilityarr[x4];
+                    
+                    console.log(epocharr[x1]);
+                    console.log(epocharr[x2]);
+                    console.log(epocharr[x3]);
+                    console.log(epocharr[x4]);
+
+
+                     
+                    var js='{ "marker": {"enabled": "true", "fillColor": "red","linewidth": 3, "linecolor": "red", "radius": 7},"y": 21}';
+            
+                    var obj=JSON.parse(js);
+                    var obj1=JSON.parse(js);
+                    var obj2=JSON.parse(js);
+                    var obj3=JSON.parse(js);
+
+                    obj.y=y1;
+                    modifiabilityarr[x1]=obj;
+
+                    obj1.y=y2;
+                    modifiabilityarr[x2]=obj1;
+
+                    obj2.y=y3;
+                    modifiabilityarr[x3]=obj2;
+                    
+                    obj3.y=y4;
+                    modifiabilityarr[x4]=obj3;
+                    
+
+
+                   
+
+    Highcharts.chart('container', {
+    title: {
+        text: 'Modifiability of a software system during development'
+    },
+    xAxis: {	
+       categories: epocharr,
+       //reversed: true,
+    //    tickInterval: 24 * 3600 * 1000,
+	    labels: {
+             format: '{value:%e %b %Y} '
+         },
+       title: {
+            text: 'Development days'
+        } 
+    },
+	plotOptions: {
+        series: { 
+		    lineWidth: 1,
+            point: {
+                events: {
+                    click: function () {
+                        if((epocharr[x1]-1000000000)<=this.category&& this.category<=(epocharr[x1]+1000000000))
+                        alert('epoch 25 ');
+                        else if((epocharr[x2]-1000000000)<=this.category&& this.category<=(epocharr[x2]+1000000000))
+                        alert('epoch 50');
+                        else if((epocharr[x3]-2000000000)<=this.category&& this.category<=(epocharr[x3]+2000000000))
+                        alert('epoch 75');
+                        else if((epocharr[x4]-1000000000)<=this.category&& this.category<=(epocharr[x4]+1000000000))
+                        alert('epoch 100');
+                        //alert('Category: ' + this.category + ', value: ' + this.y);
+
+                        // if(this.category==x1||this.category==x2||this.category==x3||this.category==x4)
+
+                    }
+                }
+            },
+            marker: {
+			   enabled:false,
+            //    fillColor: 'red',
+            //    lineColor: "red",
+            //    radius: 4,
+               //tickInterval: 50 
+            }
+        }
+    },
+    yAxis: {
+        max: 100,
+        title: {
+            text: 'Modifiability',           
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    series: [{
+        
+        name: 'Modifiability',
+        data: modifiabilityarr
+
+    }]
+	}
+    // ,
+    // function (chart) {
+    //     $.each(chart.series[0].data, function (point, i) {
+    //             for(var i in epocharr){
+    //                 if(epocharr[i] ==1313286751000){}
+    //                 else {
+    //                 this.graphic.destroy();
+    //             }
+    //             }
+    //     }
+        );
+    } 
+    } 
+  
+</script> 
+</head>
+   
+    <body>
+       <h3> <b> Enter URL for JSON File</b></h3>
+            <form name="myForm" method="POST" target="_blank">
+            <input type="text" id="URL" name="URL"  value=""><br><br>
+            <input type="button" name="submit" value="Submit Query" onClick="viewJSON()">
+            </form>       
+        <p id="container"></p><noscript></noscript>
+    </body>
+</html>
