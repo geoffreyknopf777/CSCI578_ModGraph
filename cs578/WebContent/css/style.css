@@ -1,0 +1,33 @@
+#formDiv{
+    width: 65%;
+    border: 2px solid gainsboro;
+    padding: 0px 2% 0px 2%;
+    margin-top: 15px;
+    border-radius: 25px;
+    background-color: rgb(0,0,0,0.03);
+}
+
+#formHeader{
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+    text-align: center;
+}
+
+#formDiv div{
+    margin-top: 20px;
+}
+
+#progressBar{
+    margin: auto;
+    width: 65%;
+    margin-top: 20px;
+}
+
+.progress{
+    visibility: hidden;
+}
