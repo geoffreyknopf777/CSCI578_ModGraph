@@ -83,7 +83,7 @@ similar to sample in the tomcat installing guide...
 // download and put the cs578.war file in $CATALINA_HOME/webapps
 
 // restart tomcat and go to
-http://localhost:8080/input.jsp/ 
+http://localhost:8080/cs578/input.jsp/ 
 
 // NOTE: to restart
 use the $CATALINA_HOME/bin/shutdown.sh and $CATALINA_HOME/bin/startup.sh
