@@ -18,7 +18,7 @@ Tomcat
 Version: v9.0.7
 
 
-### Installing Support Software 
+### Installing Support Software (tomcat) 
 
 There will only be the need to install tomcat
 Here is a quick guide taken from multiple tomcat supporting documentation 
@@ -137,13 +137,14 @@ the browser will launch within eclipse!
 ```
 
 ### Authors 
-Geoffrey Knopf
-Samuel Villarreal 
-Gregory Lawler
-Revanth Rayala 
+- Geoffrey Knopf
+- Samuel Villarreal 
+- Gregory Lawler
+- Revanth Rayala 
 
 ### Acknowledgments
 USC cs578 Nenad Medvidovic and  Daniel Link
   - Providers of VM env and Aracde src
+  
 Apache Tomcat team
   - Use of the open source project and sample webapp base
