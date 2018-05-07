@@ -14,7 +14,7 @@
     <body>
         <div id="formDiv" class ="container">
             <p id="formHeader"><b>Modifiability Analysis from Git Repository</b></p>
-            <form action="ModGrpah.jsp" method="GET">
+            <form action="ModGraph.jsp" method="GET">
                 <div>
                     <%= new String("Hello!  Enter the URL of a valid Git Repository to get started!") %></%></br> 
                 <%= new String ("For example, try <i> https://github.com/apache/hadoop </i> ") %>
